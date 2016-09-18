@@ -6,3 +6,4 @@ useradd -u ${FTP_USERID} ${FTP_USERNAME}
 echo “${FTP_USERNAME}:${FTP_PASSWORD}” | chpasswd
 mkdir -p /data/ftp
 chown -R ${FTP_USERNAME}:${FTP_USERNAME} /data/ftp
+/usr/sbin/vsftpd
