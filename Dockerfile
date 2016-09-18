@@ -16,8 +16,7 @@ RUN mkdir -p /var/run/vsftpd/empty \
     && echo "pasv_max_port=10100" >> /etc/vsftpd.conf \
     && echo "pasv_min_port=10090" >> /etc/vsftpd.conf \
     && echo "pasv_address=192.168.0.101" >> /etc/vsftpd.conf \
-    && sed -i "s/anonymous_enable=YES/anonymous_enable=NO/" /etc/vsftpd.conf \
-    && sed -i "s/listen=NO/listen=YES/" /etc/vsftpd.conf
+    && sed -i "s/anonymous_enable=YES/anonymous_enable=NO/" /etc/vsftpd.conf
 
 VOLUME /etc
 
