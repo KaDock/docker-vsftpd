@@ -7,6 +7,8 @@ RUN apt-get update -q -y \
     && apt-get install -q -y --no-install-recommends vsftpd \
     && apt-get clean
 
+COPY prep.bash /root/prep.bash
+
 RUN mkdir -p /var/run/vsftpd/empty \
     && echo "local_enable=YES" >> /etc/vsftpd.conf \
     && echo "chroot_local_user=YES" >> /etc/vsftp d.conf \
@@ -20,10 +22,13 @@ RUN mkdir -p /var/run/vsftpd/empty \
     && echo "chroot_local_user=YES" >> /etc/vsftpd.conf \
     && sed -i "s/anonymous_enable=YES/anonymous_enable=NO/" /etc/vsftpd.conf \
     && sed -i "s/listen=NO/listen=YES/" /etc/vsftpd.conf \
-    && sed -i "s/listen_ipv6=YES/listen_ipv6=NO/" /etc/vsftpd.conf
+    && sed -i "s/listen_ipv6=YES/listen_ipv6=NO/" /etc/vsftpd.conf \
+    && chmod +x /root/prep.bash
+    
+
 
 VOLUME /etc
 
 EXPOSE 21
 
-CMD /usr/sbin/vsftpd
+CMD /root/prep.bash
