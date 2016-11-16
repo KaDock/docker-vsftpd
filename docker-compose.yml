@@ -8,5 +8,5 @@ services:
     environment:
       EXTERNAL_IP: "172.20.20.22"
     volumes:
-      - /var/local/vsftpd:/var/vsftpd:Z
+      - /var/local/vsftpd/vsftpd:/var/vsftpd:Z
       - /usr/local/etc/ftpd.passwd:/etc/vsftpd/ftpd.passwd:ro
