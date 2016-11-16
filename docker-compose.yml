@@ -1,5 +1,6 @@
 version: '2'
 services:
+
   vsftpd:
     image: kalledk/vsftpd
     ports:
@@ -8,5 +9,10 @@ services:
     environment:
       EXTERNAL_IP: "172.20.20.22"
     volumes:
-      - /var/local/vsftpd/vsftpd:/var/vsftpd:Z
-      - /usr/local/etc/ftpd.passwd:/etc/vsftpd/ftpd.passwd:ro
+      - ./data/vsftpd:/var/vsftpd:Z
+      - ./etc/ftpd.passwd:/etc/vsftpd/ftpd.passwd:ro
+
+  rotate:
+    image: kalledk/rotate
+    volumes:
+      - ./data:/var/data:Z
