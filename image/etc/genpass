@@ -1,0 +1,5 @@
+#!/bin/sh
+
+rm -f /tmp/pass
+htpasswd -c -p -b /tmp/pass $1 $(openssl passwd -1 -noverify $2)
+cat /tmp/pass

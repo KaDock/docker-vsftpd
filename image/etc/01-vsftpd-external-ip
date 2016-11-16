@@ -1,0 +1,3 @@
+#!/usr/bin/with-contenv sh
+
+sed -i "s/EXTERNAL/${EXTERNAL_IP}/g" /etc/vsftpd.conf
