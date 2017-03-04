@@ -2,7 +2,7 @@ version: '2'
 services:
 
   vsftpd:
-    image: kalledk/vsftpd
+    image: kadock/vsftpd
     ports:
       - "21:21"
       - "10100-10199:10100-10199"
@@ -11,8 +11,3 @@ services:
     volumes:
       - ./data/vsftpd:/var/vsftpd:Z
       - ./etc/ftpd.passwd:/etc/vsftpd/ftpd.passwd:ro
-
-  rotate:
-    image: kalledk/rotate
-    volumes:
-      - ./data:/var/data:Z
