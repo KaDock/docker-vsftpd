@@ -3,7 +3,7 @@ FROM debian:jessie
 MAINTAINER Kalle R. Møller <docker@k-moeller.dk>
 
 ARG DEBIAN_FRONTEND=noninteractive
-ARG S6_VERSION=v1.18.1.5
+ARG S6_VERSION=v1.21.2.1
 
 RUN apt-get update -q -y \
     && apt-get install -q -y --no-install-recommends curl ca-certificates \
