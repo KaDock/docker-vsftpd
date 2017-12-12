@@ -10,4 +10,4 @@ services:
       EXTERNAL_IP: "${EXTERNAL_IP}"
     volumes:
       - ${VSFTPD_DATA}:/var/vsftpd:Z
-      - ${VSFTPD_ETC}:/etc/vsftpd:Z
+      - ${VSFTPD_ETC}:/etc/vsftpd:RO
