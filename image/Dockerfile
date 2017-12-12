@@ -20,11 +20,11 @@ RUN apt-get update -q -y \
                   openssl \
     && apt-get clean -q -y
 
-COPY etc/vsftpd.conf        /etc/
-COPY etc/vsftpd             /etc/pam.d/
-COPY etc/01-vsftpd-data-dir /etc/fix-attrs.d/
-COPY etc/01-vsftpd-external-ip /etc/cont-init.d/
-COPY etc/genpass /bin/genpass
+COPY etc/vsftpd.conf            /etc/
+COPY etc/vsftpd                 /etc/pam.d/
+COPY etc/01-vsftpd-data-dir     /etc/fix-attrs.d/
+COPY etc/01-vsftpd-external-ip  /etc/cont-init.d/
+COPY etc/genpass                /bin/genpass
 
 RUN \
        useradd -m \
