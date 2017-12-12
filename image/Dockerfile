@@ -37,7 +37,7 @@ RUN \
     && mkdir -p /etc/vsftpd/users \
     && touch /etc/vsftpd/ftpd.passwd
 
-VOLUME ["/var/vsftpd"]
+VOLUME ["/var/vsftpd", "/etc/vsftpd"]
     
 EXPOSE 21 10100-10199
 
