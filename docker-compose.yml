@@ -7,7 +7,7 @@ services:
       - "21:21"
       - "10100-10199:10100-10199"
     environment:
-      EXTERNAL_IP: "172.20.20.22"
+      EXTERNAL_IP: "${EXTERNAL_IP}"
     volumes:
-      - /srv/vsftpd/data:/var/vsftpd:Z
-      - /srv/vsftpd/etc:/etc/vsftpd:ro
+      - ${VSFTPD_DATA}:/var/vsftpd:Z
+      - ${VSFTPD_ETC}:/etc/vsftpd:Z
